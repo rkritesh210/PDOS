@@ -3,7 +3,8 @@
 Safety in large language models is often reduced to monolithic judgments that fail to capture the range of reasonable viewpoints. We introduce **SOS**, the first safety-focused Overton dataset of 1,770 real-world safety situations annotated across 14 harm categories, and **PDOS**, a lightweight training-free framework that retrieves personas from a synthetic pool and integrates their perspectives to generate unified Overton safety responses. Evaluated across five baselines and ten LLMs, PDOS achieves the highest average NLI coverage of 0.4226.
 
 
-![SOS Dataset Example](example.png)
+![SOS Dataset Example]<img width="716" height="366" alt="example" src="https://github.com/user-attachments/assets/4690078e-1294-4cce-a3cc-1fa945c2a4d6" />
+)
 
 ---
 
