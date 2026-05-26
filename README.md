@@ -1,4 +1,4 @@
-# PDOS: Persona-Driven Overton Synthesis
+# PDOS: Widening the Safety Overton Window Through Persona-Driven
 
 Safety in large language models is often reduced to monolithic judgments that fail to capture the range of reasonable viewpoints. We introduce **SOS**, the first safety-focused Overton dataset of 1,770 real-world safety situations annotated across 14 harm categories, and **PDOS**, a lightweight training-free framework that retrieves personas from a synthetic pool and integrates their perspectives to generate unified Overton safety responses. Evaluated across five baselines and ten LLMs, PDOS achieves the highest average NLI coverage of 0.4226.
 
@@ -11,7 +11,26 @@ Safety in large language models is often reduced to monolithic judgments that fa
 
 ---
 
-## Pipeline Overview
+## SOS Dataset
+
+**SOS** (Safety Overton Situations) is the first safety-focused Overton dataset comprising **1,770 real-world safety situations**, each annotated with multiple safety lenses drawn from a 14-category harm taxonomy. Unlike existing safety datasets that assign a single label per situation, SOS captures the full range of reasonable harm perspectives, enabling Overton-style pluralistic safety evaluation.
+
+### Construction
+SOS is built in two phases. **Phase 1** converts conversation-level safety data into standalone situations. We draw from three source datasets — DICES-350, DICES-990, and DiaSafety (unsafe instances only) — applying severity-based filtering using `gemma-2-9b-it` (threshold *s* ≥ 0.2), followed by situation extraction via `Kimi-K2.5` and human validation, yielding 4,217 curated situations.
+
+**Phase 2** annotates each situation with safety lenses from the BeaverTails taxonomy. `Kimi-K2.5` assigns *Relevance* or *No Relevance* to each of the 14 harm categories and generates a rationale for relevant labels. Only situations with more than two relevant lenses are retained, producing the final **1,770 human-verified instances**.
+
+### Statistics
+| Metric | Value |
+|---|---|
+| Total situations | 1,770 |
+| Safety lenses | 14 |
+| Avg. lenses per situation | 2.68 |
+| Avg. situation length | ~10.3 words |
+
+---
+
+## PDOS Pipeline Overview
 
 ```
 Stage 1: build_persona_pool.py      →  persona_pool.json
