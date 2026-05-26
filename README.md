@@ -33,10 +33,10 @@ SOS is built in two phases. **Phase 1** converts conversation-level safety data 
 ## PDOS Pipeline Overview
 
 ```
-Stage 1: Persona Pool Construction                   →  persona_pool.json
-Stage 2: Situation-Aware Persona Retrieval           →  retrieval_results.json
-Stage 3: Persona-Conditioned Commentary Generation   →  commentary_results.json
-Stage 4: Overton Generation                          →  synthesis_results.json
+Stage 1: Persona Pool Construction                   →  build_persona_pool.py
+Stage 2: Situation-Aware Persona Retrieval           →  persona_retrieval.json
+Stage 3: Persona-Conditioned Commentary Generation   →  commentary_generation.json
+Stage 4: Overton Generation                          →  overton_synthesis.json
 ```
 
 ### Stage 1 — Persona Pool Construction
