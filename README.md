@@ -34,9 +34,9 @@ SOS is built in two phases. **Phase 1** converts conversation-level safety data 
 
 ```
 Stage 1: Persona Pool Construction                   →  build_persona_pool.py
-Stage 2: Situation-Aware Persona Retrieval           →  persona_retrieval.json
-Stage 3: Persona-Conditioned Commentary Generation   →  commentary_generation.json
-Stage 4: Overton Generation                          →  overton_synthesis.json
+Stage 2: Situation-Aware Persona Retrieval           →  persona_retrieval.py
+Stage 3: Persona-Conditioned Commentary Generation   →  commentary_generation.py
+Stage 4: Overton Generation                          →  overton_synthesis.py
 ```
 
 ### Stage 1 — Persona Pool Construction
